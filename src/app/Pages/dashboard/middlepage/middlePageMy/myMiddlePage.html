@@ -1,0 +1,110 @@
+            <div class="flow_container_content_poster" >
+                <ul style="width: 100%">
+                    <li class="flow_container_content_poster_left">
+                        <a href=""><img src="" alt=""></a>
+                    </li>
+                    <li class="flow_container_content_poster_right">
+                        <ul>
+                            <li class="flow_container_content_poster_left">
+                                <a href="">
+                                    <img src="" alt="">
+                                </a>
+                            </li>
+
+                            <li>
+                                <input type="text" style="text-decoration: underline;" width="100px;">
+                            </li>
+                        </ul>
+                       
+                    </li>
+                </ul>
+            </div>
+            <div class="flow_container_content_validation">
+
+            </div>
+            <div class="flow_container_content_post data-total">
+                <div class="gonderi_yok">
+
+                </div>
+            </div>
+          
+          
+            <div class="flow_container_content_post data-total"  infiniteScroll
+		    [infiniteScrollDistance]="1"
+		    [infiniteScrollThrottle]="600"
+		    (scrolled)="getFeedList()">
+        <div class="flow_container_content_post_content_rt">   </div>
+        <div class="flow_container_content_post_post" *ngFor="let item of kafes">
+             <div class="flow_container_content_post_pp">
+                    <a href="">
+                        <img src="{{item.user.profileImage}}" alt="">
+                    </a>
+                </div>
+                <div class="flow_container_content_post_content">
+                    <div class="flow_container_content_post_content_top">
+                        <div class="flow_container_content_post_content_top_left">
+                        <ul>
+                            <li>{{item.user.name}}</li>
+                            <li>@{{item.user.username}} </li>
+                            <li class="Rozet"></li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <i></i>
+                                <a routerLink="">{{item.kafeDesc.name}}</a>
+                            </li>
+                        </ul>
+                        </div>
+                        <div class="flow_container_content_post_content_top_left_m" ></div>
+                        <div class="flow_container_content_post_content_top_right">
+                               <div class="flow_container_content_post_content_top_right_top">
+                                <ul>
+                                    <li>
+                                        <p>{{item.createdAt}}</p>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flow_container_content_post_content_middle">
+                        <article>
+                            <p [innerHTML]="item.post"></p>
+                            <div>
+                                <a href=""></a>
+                                <a href=""></a>
+                            </div>
+                        </article>
+                        <a class="popup ImagePopupNone" href="">
+                            <img src="{{item.fileEntries.imgFilename}}" alt="">
+                        </a>
+                    </div>
+                    <div class="flow_container_content_post_content_bottom">
+                        <div class="flow_container_content_post_content_bottom_left">
+                            <ul>
+                                <li><a href=""><i class="fa fa-pencil"></i>Yanıtla</a></li>
+                                <li *ngIf="!item.isReposted"><a  (click)="repost(item.id)"><i class="fa fa-retweet"></i>Alıntıla</a></li>
+                                <li *ngIf="item.isReposted" ><a style="color: #e67e22" (click)="deleteRepost(item.id)"><i class="fa fa-retweet"></i>Alıntıla</a></li>    
+                                <li *ngIf="!item.isLiked"><a (click)="likePost(item.id,item.likeCount)"><i class="fa fa fa-heart-o"></i>Beğen<span  class="flow_container_content_post_content_bottom_left_like" *ngIf="item.likeCount">{{item.likeCount}}</span></a></li>
+                                <li *ngIf="item.isLiked"><a (click)="unLikePost(item.id)" style="color: red"><i class="fa fa fa-heart-o"></i>Beğen<span  class="flow_container_content_post_content_bottom_left_like">{{likeCount}}</span></a></li>   
+                                <li *ngIf="!item.isDisliked"><a (click)="disLikePost(item.id,item.dislikeCount)"><i class="fa fa-heartbeat"></i>Beğenme<span class="flow_container_content_post_content_bottom_left_dislike" *ngIf="item.dislikeCount" >{{item.dislikeCount}}</span></a></li>
+                                <li *ngIf="item.isDisliked" ><a (click)="unDislikePost(item.id)"><i class="fa fa-heartbeat"></i>Beğenme<span class="flow_container_content_post_content_bottom_left_dislike">{{dislikeCount}}</span></a></li>
+                                <li><a (click)="goToPostDetail(item.id)"><i class="fa fa-external-link"></i>Git</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+    
+
+     
+
+    </div>
+            <div class="flow_post_end" *ngIf="id ==0">
+                <div class="logo-icon-renkli"   style="height: 40px;vertical-align: middle;">
+            
+                </div>
+                <span>SayfaSonu</span>
+            </div>
+

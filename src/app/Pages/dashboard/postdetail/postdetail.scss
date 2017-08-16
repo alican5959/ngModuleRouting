@@ -1,0 +1,338 @@
+
+// .logo-shadow, .logo, 
+// .logo-renkli, .android, .ios, 
+// .default-profile, .ic-cafe, .logo-icon-renkli, .logo-icon, .ic-cafe-small, 
+// .search, .follow, .nofollow, .ic-messages, .Astro, 
+// .Borsa, .Eğitim, .Emlak, .Emtia, .Foreks, 
+// .Genç, .Gurme, .Haber, .ic-settings, .Kariyer, 
+// .Kültür, .Magazin, .Moda, .Oto, .Sağlik, 
+// .Siyaset, .Spor, .Tarih, .Tatil, .Tekno, 
+// .admin-rozet, .editor-rozet, .finkafe-onayli-rozet, .ic-notifications, .ic-profile, 
+// .telefon-onayli
+// { display: inline-block; background: url(/assets/kafe_icon/sprite_flow.png) no-repeat; overflow: hidden; text-indent: -9999px; text-align: left; }
+ 
+// .logo-shadow { background-position: -1px -0px; width: 253px; height: 40px; }
+// .logo { background-position: -1px -41px;width: 253px; height: 40px; }
+// .logo-renkli { background-position: -1px -82px; width: 253px; height: 40px; }
+// .android { background-position: -1px -123px; width: 125px; height: 41px; }
+// .ios { background-position: -127px -123px; width: 125px; height: 41px; }
+// .default-profile { background-position: -1px -165px; width: 70px; height: 70px;    margin-top: 76px;
+//     margin-left: -180px; }
+// .ic-cafe { background-position: -72px -165px; width: 53px; height: 40px; }
+// .logo-icon-renkli { background-position: -126px -165px; width: 42px; height: 40px; }
+// .logo-icon { background-position: -169px -165px; width: 41px; height: 40px; }
+// .ic-cafe-small { background-position: -211px -165px; width: 40px; height: 30px; }
+// .search { background-position: -211px -196px; width: 40px; height: 40px; }
+// .addfollow { background-position: -72px -206px; width: 32px; height: 32px; background-color: #43C6DB; }
+// .unfollow { background-position: -105px -206px; width: 32px; height: 32px; background-color: #000080; }
+// .ic-messages { background-position: -138px -206px; width: 23px; height: 18px; }
+// .Astro { background-position: -162px -206px; width: 18px; height: 18px; }
+// .Borsa { background-position: -181px -206px; width: 18px; height: 18px; }
+// .Eğitim { background-position: -138px -225px; width: 18px; height: 18px; }
+// .Emlak { background-position: -157px -225px; width: 18px; height: 18px; }
+// .Emtia { background-position: -176px -225px; width: 18px; height: 18px; }
+// .Foreks { background-position: -1px -236px; width: 18px; height: 18px; }
+// .Genç { background-position: -20px -236px; width: 18px; height: 18px; }
+// .Gurme { background-position: -39px -236px; width: 18px; height: 18px; }
+// .Haber { background-position: -195px -237px; width: 18px; height: 18px; }
+// .ic-settings { background-position: -214px -237px; width: 18px; height: 18px; }
+// .Kariyer { background-position: -233px -237px; width: 18px; height: 18px; }
+// .Kültür { background-position: -58px -239px; width: 18px; height: 18px; }
+// .Magazin { background-position: -77px -239px; width: 18px; height: 18px; }
+// .Moda { background-position: -96px -239px; width: 18px; height: 18px; }
+// .Oto { background-position: -115px -239px; width: 18px; height: 18px; }
+// .Sağlik { background-position: -134px -244px; width: 18px; height: 18px; }
+// .Siyaset { background-position: -153px -244px; width: 18px; height: 18px; }
+// .Spor { background-position: -172px -244px; width: 18px; height: 18px; }
+// .Tarih { background-position: -1px -255px; width: 18px; height: 18px; }
+// .Tatil { background-position: -20px -255px; width: 18px; height: 18px; }
+// .Tekno { background-position: -39px -255px; width: 18px; height: 18px; }
+// .admin-rozet { background-position: -191px -256px; width: 16px; height: 16px; }
+// .editor-rozet { background-position: -208px -256px; width: 16px; height: 16px; }
+// .finkafe-onayli-rozet { background-position: -225px -256px; width: 16px; height: 16px; }
+// .ic-notifications { background-position: -58px -258px; width: 16px; height: 18px; }
+// .ic-profile { background-position: -75px -258px; width: 16px; height: 18px; }
+// .telefon-onayli { background-position: -92px -258px; width: 16px; height: 16px; }
+
+
+// .flow_container_body {
+//     width: 100%;
+//     font-family: "Open Sans",Helvetica,Arial,sans-serif;
+// }
+// .flow_container {
+//     width: 1170px;
+//     margin: auto;
+//     margin-top: 65px;
+// }
+// .flow_container_left {
+//     float: left;
+//     width: 25%;
+// }
+// .flow_container_right_hashtag {
+//     background-color: #edebeb;
+//     width: 292px;
+//     display: inline-block;
+//     margin-bottom: 15px;
+// }
+// .flow_container_right_hash {
+//     padding-left: 15px;
+//     padding-bottom: 15px;
+//     margin-bottom: 15px;
+// }
+// .flow_container_right_hash h3 {
+//     text-align: center;
+// }
+// .h1, .h2, .h3, h1, h2, h3 {
+//     margin-top: 20px;
+//     margin-bottom: 10px;
+// }
+// .h3, h3 {
+//     font-size: 24px;
+// }
+// .flow_container_right_hash ul {
+//     padding-bottom: 7px;
+//     list-style-type: none;
+// }
+// .flow_container_content {
+//     float: left;
+//     width: 50%;
+//     padding-left: 15px;
+    
+// }
+// .flow_container_content_validation {
+//     margin-bottom: 15px;
+//     width: 555px;
+// }
+// .flow_container_content_post {
+//     width: 555px;
+// }
+// .flow_container_content_post_content_rt {
+//     line-height: 30px;
+//     display: initial;
+//     color: #e67e22;
+//     width: 555px;
+// }
+// .flow_container_content_post_post {
+//     width: 555px;
+//     min-height: 120px;
+//     display: inline-flex;
+//      background-color: #edebeb;
+//     border-bottom: 1px solid rgba(128,128,128,0.2);
+// }
+// .flow_container_content_post_pp {
+//     width: 107px;
+//     float: left;
+// }
+// .flow_container_content_post_pp img {
+//     height: 70px;
+//     width: 70px;
+//     margin: 15px;
+//     border-radius: 3px;
+// }
+// .flow_container_content_post_content {
+//     width: 448px;
+//     float: right;
+// }
+// .flow_container_content_post_content_top {
+//     margin-top: 10px;
+//     display: block;
+// }
+// .flow_container_content_post_content_top_left {
+//     float: left;
+//     max-width: 300px;
+// }
+// ol, ul {
+//     list-style: none;
+// }
+// .flow_container_content_post_content_top_left li:nth-child(2) {
+//     margin-right: 5px;
+//     font-style: oblique;
+// }
+// .flow_container_content_post_content_top_left li {
+//     display: inline-block;
+// }
+// .flow_container_content_post_content_top_left li:first-child {
+//     font-weight: 600;
+//     margin-right: 5px;
+// }
+// .flow_container_content_post_content_top_left_m {
+//     display: none;
+// }
+// // .flow_container_content_post_content_top_left_m {
+// //     float: left;
+// // }
+// .flow_container_content_post_content_top_right {
+//     float: right;
+//     margin-right: 5px;
+//     font-size: 14px;
+// }
+// .flow_container_content_post_content_bottom_right {
+//     float: right;
+//     width: 100%;
+//     padding-top: 3px;
+//     height: 22px;
+// }
+
+// .flow_container_content_post_content_middle {
+//     word-wrap: break-word;
+//     display: inline-block;
+//     width: 100%;
+//     float: left;
+//     margin-top: 5px;
+// }
+// .ImagePopupNone {
+//     clear: both;
+//     display: block;
+//     resize: vertical;
+//     overflow-y: auto;
+//     margin-bottom: 5px;
+//     overflow: hidden;
+// }
+// .flow_container_content_post_content_middle img {
+//     max-width: 430px;
+//     max-height: 600px;
+//     margin-bottom: 20px;
+//     width: 100%;
+// }
+// .flow_container_content_post_content_bottom {
+//     height: 30px;
+//     width: 448px;
+//     margin-bottom: 10px;
+//     display: inline-block;
+// }
+// .flow_container_content_post_content_bottom_left {
+//     float: left;
+//     font-size: 16px;
+//     font-weight: 300;
+// }
+// .flow_container_content_post_content_bottom_left li {
+//     display: inline-block;
+// }
+
+// .flow_container_content_post_content_bottom_left_like{
+//     font-size: 15px;
+//     color: #e74c3c;
+//     border: 2px solid #e74c3c;
+//     padding: .0em .3em;
+//     border-radius: .25em;
+//     display: inline;
+//     font-weight: 600;
+// }
+
+// .flow_container_content_post_comment {
+//     display: flex;
+    
+// }
+// .flow_container_content_poster_left {
+//     float: left;
+// }
+//     .btn-primary {
+//     color: #fff;
+//     background-color: #337ab7;
+//     border-color: #2e6da4;
+//     width: 170px;
+//     height: 40px;
+// }
+// .flow_container_content_post_content_bottom_left li {
+//     display: inline-block;
+// }
+// .flow_container_content_post_content_bottom_left li a {
+//     text-decoration: none;
+//     color: #6C7A89;
+//     cursor: pointer;
+//     margin: 0;
+//     padding: 0;
+//     top: 0;
+//     left: 0;
+//     bottom: 0;
+//     right: 0;
+//     width: 90%;
+// }
+// .flow_container_content_post_content_bottom_left_dislike {
+//     font-size: 15px;
+//     color: #2a3a5e;
+//     border: 2px solid #2a3a5e;
+//     padding: .0em .3em;
+//     border-radius: .25em;
+//     display: inline;
+//     font-weight: 600;
+// }
+// .flow_container_right {
+//     float: right;
+//     width: 25%;
+// }
+
+// .flow_container_right_hashtag {
+//  background-color: #edebeb;
+//     width: 292px;
+//     display: inline-block;
+//     margin-bottom: 15px;
+//     padding-top: 15px;
+  
+// }
+// .flow_container_right_hash li:nth-child(2) {
+//     font-style: oblique;
+//     padding-left: 5px;
+//     color: #6C7A89;
+//     font-size: 15px;
+   
+// }
+// .flow_container_right_hash {
+//     padding-left: 15px;
+//     padding-bottom: 15px;
+//     margin-bottom: 15px;
+// }
+// .flow_container_right_footer {
+//     text-align: center;
+//     background-color: #edebeb;
+//     width: 292px;
+//     display: inline-block;
+//     padding-bottom: 15px;
+// }   
+// .flow_container_right_footer_content li  {
+//     text-decoration: none;
+//     color: #6C7A89;
+// }
+
+// .flow_container_right_footer_content li {
+//     display: inline-block;
+//     color: #6C7A89;
+// }
+// .flow_container_right_footer_content ul:nth-child(2) li:first-child {
+//     margin-right: 10px;
+// }
+// *, *:before, *:after {
+//     box-sizing: border-box;
+//     margin: 0;
+//     padding: 0;
+// }
+// .flow_post_like_rt{
+//     padding-top:15px
+// }
+.img{
+    width: 30px;
+    height: 30px;
+}
+.sidenav{
+    padding-left: 20px
+}
+.flow_post_reply {
+    background-color: #27ae60;
+    color: white;
+    padding: 5px;
+    margin-top: 15px;
+    display: inline-block;
+    border-radius: 5px 5px 0px 0px;
+}
+.flow_post_end {
+     background-color: #edebeb;
+    text-align: center;
+    border-radius: 0px 0px 15px 15px;
+    color: #3498db;
+    cursor: default;
+}
+
+.post:hover{
+     background-color: #edebeb;
+}
+

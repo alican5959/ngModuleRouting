@@ -1,0 +1,113 @@
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fdfdfd;
+}
+
+.navbar-brand{
+    border: 0 none;
+    background:url(../../../assets/kafe_icon/logo.png) center no-repeat;
+    width:300px;
+    margin-left: 100px;
+    padding: 0;
+    height: 60px;
+    float: left;
+    border-radius: 5px;
+}
+.ImagePopupNone {
+    clear: both;
+    // display: block;
+    resize: vertical;
+    overflow-y: auto;
+    margin-bottom: 5px;
+    overflow: hidden;
+    margin-left: -8px;
+    margin-top: -8px;
+    border-radius: 10px 10px 0px 0px;
+    width: 310px;
+
+}
+
+.postbox {
+    position: relative;
+    min-height: 1px;
+    padding-right: 8px;
+    padding-left: 0px;
+}
+
+.fa-2x {
+    font-size: 2em;
+}
+.re-tweet{
+  background: url(../../../assets/kafe_icon/drawable-xxxhdpi/ic_refin.png) center no-repeat;
+}
+.loadingImg{
+    height:15px;
+     width:30px;
+    margin-top: 1%;
+}
+
+
+/* You can add global styles to this file, and also import other style files */
+.media-object {
+    display: block;
+    max-width: 64px;
+    max-height: 64px;
+}
+#icons {
+    text-align: center;
+    padding-bottom: 10px;
+}
+.media-object {
+    display: block;
+    max-width: 64px;
+    max-height: 64px;
+}
+#repost {
+    color: #6C7A89;
+    margin-right: 15%;
+}
+#like {
+    color: #6C7A89;
+    margin-right: 15%;
+}
+#dislike {
+    color: #6C7A89;
+    margin-right: 15%;
+}
+#git {
+    color: #6C7A89;
+}
+
+*, *:before, *:after {box-sizing:  border-box !important;}
+
+
+.row {
+ -moz-column-width: 18em;
+ -webkit-column-width: 18em;
+ -moz-column-gap: 1em;
+ -webkit-column-gap:1em; 
+  
+}
+
+.item {
+ display: inline-block;
+ padding:  .25rem;
+ width:  100%; 
+}
+
+.thumbnail {
+ position:relative;
+ display: block;
+}
+
+.navbar-fixed-top {
+    /*background-color: #66e2d1;*/
+    font-family: "Open Sans",Helvetica,Arial,sans-serif;
+    background-color: #43C6DB;
+    -webkit-box-shadow: 0px 3px 10px -2px rgba(0,0,0,0.76);
+    -moz-box-shadow: 0px 3px 10px -2px rgba(0,0,0,0.76);
+    box-shadow: 0px 3px 10px -2px rgba(0,0,0,0.76);    
+}

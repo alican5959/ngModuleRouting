@@ -1,0 +1,51 @@
+@media (min-width:480px) {
+  .my-mobile-select {
+    display:none !important;
+  }
+}
+
+@media (max-width: 40px) {
+  .my-mobile-image {
+    display:none !important;
+  }
+
+
+}
+div#one {
+  height: 20px;
+
+}
+div#two {
+  height: 20px;
+
+}
+div#three {
+  height: 20px;
+}
+#profilImgSmall{
+  min-height: 190px;
+  min-width: 190px;
+  margin-top: -150px;
+  margin-left: 10%;
+  border-radius: 7px;
+
+}
+
+#kapakContainer{
+
+}
+
+
+ul {
+  padding-top: 2%;
+  margin-left: 5%;
+  list-style: none;
+  text-align: center;
+}
+
+ul li {
+  display: inline-block;
+  vertical-align: top;
+  padding-right: 5%;
+  padding-left: 4%;
+}

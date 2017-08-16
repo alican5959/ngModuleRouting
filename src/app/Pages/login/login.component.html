@@ -1,0 +1,21 @@
+<div class="row background">
+
+    <div class="container login">
+        
+        <form class="form-signin">
+            <h2 class="form-signin-heading">Finkafe - Giriş</h2>
+            <input type="email" id="inputEmail" class="form-control" placeholder="Email" [(ngModel)]="user.email" name="email" required/>
+            <br>    
+            <input type="password" id="inputPassword" class="form-control" placeholder="Parola" [(ngModel)]="user.password" name="parola" required/>
+            <br>         
+            <button class="btn btn-lg btn-primary btn-block" type="submit"  (click)="login()">Giriş yap</button>
+            <br> 
+            
+            <a class="btn btn-link" routerLink="/register">Giriş yapamıyorum</a>  
+            <br>  
+            <a class="btn btn-link" routerLink="/register">Kayıt</a>         
+        </form>
+
+    </div>
+
+</div>

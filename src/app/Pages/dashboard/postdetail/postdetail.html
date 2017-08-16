@@ -1,0 +1,233 @@
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+  <script>$('.dropdown-toggle').dropdown();</script>
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: auto;}
+
+    /* Set gray background color and 100% height */
+    .sidenav {
+      height: 100%;
+    }
+
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 5px;
+    }
+
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 5px;
+      }
+      .row.content {height: auto;}
+    }
+  </style>
+
+<div class="container" style="margin-top: 100px">
+
+
+  <!-- /top nav -->
+  <div class="row">
+    <div class="container">
+      <div class="row content">
+        <!-- profil image and kafe variants-->
+        <div class="col-md-3 sidenav">
+          <div class="row"> <!-- row -->
+
+            <div class="panel" style="background-color:#edebeb;">
+              <div class="panel-heading">
+                <i class="fa fa-hashtag"></i><h4>Güncel Grup Başlıkları</h4>
+
+                </div>
+              <div class="panel-body text-left">
+                <div class="row">
+                
+                  <ul style="list-style: none" *ngFor="let item of hashtags">
+                     <a href=""><li>{{item.hashtag}}</li></a> 
+                      <li>{{item.hashtagPostCount}} Gönderi</li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+
+
+          </div><!-- row -->
+     
+        </div> 
+   
+
+
+        <div class="col-md-6" style="margin-left: -10px">
+            <div class="col-md-12 post" >
+                <br>
+            <div class="col-md-2">
+                <div class="img">
+                <img style="width: 70px;height:70px;" src="{{post.user.profileImage}}" alt="">         
+                </div>
+            </div>
+     
+
+             <div class="col-md-10" >
+                <div style="text-align: left;">{{post.user.name}} @{{post.user.username}}</div>
+                <div class="fa fa-th">{{post.kafeDesc.name}}</div>
+                <br>
+                <br>
+                <div style="font-size: large;"><p [innerHTML]="post.post"></p></div>
+                <br>
+                <div class="col-md-12">
+                <img src="{{post.fileEntries.imgFilename}}" alt="">
+                </div>
+                <br>
+                <br>
+                <div>
+
+                <a href=""><span class="glyphicon glyphicon-pencil"></span> Cevapla </a>
+                <a href=""><span class="glyphicon glyphicon-retweet"></span> Alıntıla</a>
+                <span class="badge alert-danger">{{post.repostCount}}</span>
+                <a href=""> <span class="glyphicon glyphicon-heart-empty"></span> Beğen</a>
+                <span class="badge alert-danger">{{post.likeCount}}</span>
+                <a href="" ><i class="fa fa-heartbeat"></i> Beğenme</a>
+                <span class="badge alert-danger">{{post.likeCount}}</span>
+                </div>
+                   <br>
+                   <br>
+            </div>
+        </div>
+
+             <div class="col-md-6" style="margin-left:-14px">
+  <!-- Trigger the modal with a button -->
+            <button type="button"  class="btn btn-info btn-lg" data-toggle="modal" data-target="#repostModal"> Alıntılayanlar</button>
+                </div>
+            <div class="col-md-6" style="margin-left:-14px">
+  <!-- Trigger the modal with a button -->
+            <button type="button"  class="btn btn-info btn-lg" data-toggle="modal" data-target="#likeModal">Beğenenler</button>
+            </div> 
+            
+            
+            <div class="flow_post_reply">
+                <h4>Yanıtlar</h4>
+            </div>
+            <div style="border-bottom:5px solid #27ae60"></div>
+            
+            <br>
+            <div *ngIf="post.repostCount ==0">
+              <h4>  Burada Hiç Gönderi Yok</h4>
+            </div>
+            <div *ngFor="let item of post.replys">
+            <div class="col-md-2">
+                <div class="img">
+                <img style="width: 60px;height: 60px;" src="{{item.user.profileImage}}" alt="">         
+                </div>
+            </div>
+            <div class="col-md-10" >
+                <div style="text-align: left;">{{item.user.name}} @{{item.user.username}}</div>
+                <div class="fa fa-th">{{item.kafeDesc.name}}</div>
+                <br>
+                <div style="font-size: large;"><p [innerHTML]="item.post"></p></div>
+                <br>
+                <img src="{{item.fileEntries.imgFilename}}" alt="">
+                <div>
+                <a href=""><span class="glyphicon glyphicon-pencil"></span> Cevapla </a>
+                <a href=""><span class="glyphicon glyphicon-retweet"></span> Alıntıla</a>
+                <span class="badge alert-danger">{{item.repostCount}}</span>
+                <a href=""> <span class="glyphicon glyphicon-heart-empty"></span> Beğen</a>
+                <span class="badge alert-danger">{{item.likeCount}}</span>
+                <a href="" ><i class="fa fa-heartbeat"></i> Beğenme</a>
+                <span class="badge alert-danger">{{item.likeCount}}</span>
+                </div>
+                   <br>
+                  
+            </div>
+               
+            </div>
+            <div class="flow_post_end">
+                <img src="" alt=""> Sayfa Sonu
+            </div>
+        </div><!-- center user posts-->
+     
+        <!-- current hastags-->
+
+        <div class="col-md-3 sidenav">
+          <div class="panel panel-primary">
+            <div class="panel-heading"><h4>Önerilen Hesaplar</h4></div>
+            <div class="panel-body">
+              <div class="row">
+              </div>
+            </div>
+          </div>
+        </div><!-- current hastags-->
+
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- LikeUserModal -->
+  <div class="modal fade" id="likeModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Beğenenler</h4>
+        </div>
+        <div class="modal-body"  *ngFor="let item of post.likeUser">
+          <img style="width: 80px;height: 80px;" src="{{item.profileImage}}" alt=""><a href=""><p style="float: right">@{{item.username}}</p></a>
+        </div>  
+        <div class="modal-body"  *ngIf="post.likeCount==0">
+            <h3>Henüz Bu Gönderiyi Beğenen Yok </h3>
+            <h2>İlk Beğenen Olmak İster Misin?</h2>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+       <!-- UnlikeuserModal -->
+  <div class="modal fade" id="repostModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Alıntılayanlar</h4>
+        </div>
+        <div class="modal-body"  *ngIf="post.repostCount==0">
+            <h3>Henüz Bu Gönderiyi Alıntılayan Kimse Yok </h3>
+            <h2>İlk Alıntılayan Olmak İster Misin?</h2>
+        </div>
+        <div class="modal-body"  *ngFor="let item of post.repostUser">
+          <img style="width: 80px;height: 80px;" src="{{item.profileImage}}" alt=""><p style="float: right">@{{item.username}}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>

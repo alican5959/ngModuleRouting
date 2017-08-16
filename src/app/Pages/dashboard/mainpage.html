@@ -1,0 +1,143 @@
+
+<div class="header">
+    <a routerLink="/mainpage" (click)="sifirla()" class="logo"></a>
+    <div class="flow_header_content_right">
+        <ul>
+            <div class="search">
+            <ul style="list-style-type: none">
+                <li>
+                <input class="search_text_showcase" type="text" placeholder="Ara">
+                <input class="search_button_showcase" type="submit" value="">
+                </li>
+            </ul>
+            </div>
+            <!-- <li class="flow_header_content_right_pp"><a href="" title="profilim">
+                <div class="default-profile">
+                    </div></a></li>
+            <li class="notification_li"><a href="" title="Bildirimler"><div class=""></div></a></li>
+            <li class="messages_li"><a href="" title="Mesajlar"><div></div></a></li>
+            <li class="flow_header_content_right_logout"><a href="" ><div class="ic-settings"></div></a></li> -->
+        </ul>
+    </div>
+    </div>
+
+
+
+
+
+<div class="flow_container_body">
+    <div class="flow_container">
+        <div class="flow_container_left">
+                <div class="flow_container_left_p">
+                    <div class="flow_container_left_profile">
+                        <div class="flow_container_left_profile_pp">
+                            <a href="">
+                                <img style="max-width: 70px;max-height: 70px;" src="{{user.profileImage}}" alt="">
+                            </a>
+                        </div>
+                        <div class="flow_container_left_profile_content">
+                            <ul>
+                                <li><a routerLink="" (click)="goToProfilePage(user.id)"><h4>{{user.name}}</h4></a></li>
+                                <li><p>@{{user.username}}</p></li>
+                            </ul>
+                            <ul>
+                                <li><a href="">Gönderi <br><p>{{user.postCount}}</p></a></li>
+                                <li><a href="">Takip Edilen <br><p >{{user.followedByUser}}</p></a></li>
+                                <li><a href="">Takipçi <br><p>{{user.followingOfUser}}</p></a></li>                              
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flow_container_left_k">
+                    <div class="flow_container_left_kafe">
+                       <h3> <i class="fa fa-th"></i> Kafeler</h3>
+                        <ul *ngFor="let item of kafes">                           
+                            <li><a routerLink=""   (click)="getKafeById(item.KafeDesc.id,item.KafeDesc.name)"><div class="{{item.KafeDesc.name}}"></div> {{item.KafeDesc.name}}</a></li>
+                        </ul>
+                    </div>
+                </div>
+        </div>
+
+        
+        
+        <div class="flow_container_content">
+               <middle *ngIf="id == 1"></middle> 
+               <middle *ngIf="id == 2"></middle> 
+               <middle *ngIf="id == 3"></middle> 
+               <middle *ngIf="id == 4"></middle> 
+               <middle *ngIf="id == 5"></middle> 
+               <middle *ngIf="id == 6"></middle> 
+               <middle *ngIf="id == 7"></middle> 
+               <middle *ngIf="id == 8"></middle> 
+               <middle *ngIf="id == 9"></middle> 
+               <middle *ngIf="id == 10"></middle> 
+               <middle *ngIf="id == 11"></middle> 
+               <middle *ngIf="id == 12"></middle> 
+               <middle *ngIf="id == 13"></middle> 
+               <middle *ngIf="id == 14"></middle> 
+               <middle *ngIf="id == 15"></middle> 
+               <middle *ngIf="id == 16"></middle> 
+               <middle *ngIf="id == 17"></middle> 
+               <middle *ngIf="id == 18"></middle> 
+               <middle *ngIf="id == 19"></middle> 
+               <middle *ngIf="id == 20"></middle>  
+               <myPage *ngIf="id==0"> </myPage>   
+                <!-- <router-outlet ></router-outlet>  -->
+        </div>
+
+     
+     
+        <div class="flow_container_right">
+            <div class="flow_container_right_hashtag">
+                <div class="flow_container_right_hash">
+                    <h3><i class="fa fa-th"></i> Güncel Grup Başlıkları </h3>
+                    <ul *ngFor="let item of hashtags">
+                        <li style="padding-top: 8px;"><a  (click)="goToHashtag(item.hashtag)">#{{item.hashtag}}</a></li>
+                        <li >{{item.hashtagPostCount}}  Gönderi</li>
+                        <!-- ngIf="i<11"
+                        let i=index -->
+                    </ul>
+                </div>
+            </div>
+            <div class="flow_container_right_f">
+                <div class="flow_container_right_footer">
+                    <div class="flow_container_right_footer_logo">
+                        <a href="">
+                            <div class="logo-renkli">
+
+                            </div>
+                        </a>
+                    </div>
+                    <div class="flow_container_right_footer_content">
+                        <ul>
+                            <!-- <li><a href="">Hakkımızda</a></li>
+                            <li><a href="">Yardım</a></li>
+                            <li><a href="">Koşullar</a></li>
+                            <li><a href="">İletişim</a></li>
+                            <li><a href="">2016</a></li> -->
+                        </ul>
+                        <ul>
+                            <li>
+                                <div class="ios">
+
+                                </div>
+                            </li>
+                            <li>
+                                <div class="android">
+
+                                </div>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

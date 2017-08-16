@@ -1,0 +1,163 @@
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>$('.dropdown-toggle').dropdown();</script>
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: auto;}
+
+    /* Set gray background color and 100% height */
+    .sidenav {
+      height: 100%;
+    }
+
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 5px;
+    }
+
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 5px;
+      }
+      .row.content {height: auto;}
+    }
+  </style>
+<div class="container-fluid" id="kapakContainer">
+  <div class="col-sm-12 col-md-12 col-lg-12">
+     <img style="max-height: 300px; width: 100%; margin-top: 0px; margin-left: 0px;" src="{{user.backgroundImage}}"> 
+    <div style="background-color: #dddddd; height: 75px; width: 100%;">
+      <ul>
+        <li>
+          <b>Gönderi</b>
+           <b><p>{{user.postCount}}</p></b> 
+        </li>
+        <li>
+          <b>Takip Edilen</b>
+           <b><p>{{user.followingOfUser}}</p></b> 
+        </li>
+        <li>
+          <b>Takipçi</b>
+           <b><p>{{user.followedByUser}}</p></b> 
+        </li>
+        <li>
+          <b>Beğeni</b>
+           <b><p>{{user.likeCount}}</p></b> 
+        </li>
+      </ul>
+    </div>
+
+  </div>
+  <div>
+
+  </div>
+</div>
+  <div class="row">
+ 
+  </div>
+<br>
+  <br>
+  <br>
+<div class="container">
+
+
+  <!-- /top nav -->
+  <div class="row">
+    
+    <div class="container">
+      <div class="row content">
+        <!-- profil image and kafe variants-->
+        <div class="col-sm-3 sidenav">
+          <div class="row"> <!-- row -->
+             <div style="text-align: left" class="col-sm-12 col-md-12 col-xs-12">
+     <img id="profilImgSmall" class="img-circle" src="{{user.profileImage}}" style="width: 90px;height:90px;"> 
+  </div>
+            <div class="panel panel-primary" style="">
+               <div class="panel-heading"><h4>{{user.name}}</h4></div> 
+              <div class="panel-body text-left">
+                <div class="row">
+                  <div class="col-md-12" style="text-align: center;">
+                  </div>
+                  <div class="col-md-12 col-xs-12 col-lg-12" style="padding-bottom: 5%;">
+
+                    <h4 style="text-align: center;"><a href="/profile"></a></h4>
+                     <h4><a>@{{user.username}}</a></h4> 
+                    <div>
+                       <a href=""><span class="glyphicon glyphicon-calendar"></span> {{user.birthday | date: 'dd/MM/yyyy'}} </a> 
+                      <br>
+                       <a href=""><span class="glyphicon glyphicon-gift"></span> {{user.creationDate | date: 'dd/MM/yyyy'}} </a> 
+
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+
+          </div><!-- row -->
+        </div> <!-- profil image and kafe variants-->
+        <!-- center user posts-->
+
+
+        <div class="col-sm-6">
+
+           <div *ngFor="let item of postData"> 
+            <!-- <div *ngIf="">Alıntılandı from</div> -->
+             <div style="text-align: left;">{{item.user.name}} @{{item.user.username}}</div> 
+            <br>
+             <div>{{item.kafeDesc.name}}</div> 
+             <div style="font-size: large;"><p [innerHTML]="item.post"></p></div> 
+             <img style="width: 480px; height: 240px;" src="{{item.fileEntries.imgFilename}}" alt="{{item.imgFilename}}"> 
+            <div>
+            <a href=""><span class="glyphicon glyphicon-pencil"></span> Cevapla </a>
+            <a href=""><span class="glyphicon glyphicon-retweet"></span> Alıntıla</a>
+             <span class="badge alert-danger">{{item.reportersCount}}</span> 
+            <a href=""> <span class="glyphicon glyphicon-heart-empty"></span> Beğen</a>
+             <span class="badge alert-danger">{{item.likeCount}}</span> 
+            <a href="" ><i class="fa fa-heartbeat"></i> Beğenme</a>
+             <span class="badge alert-danger">{{item.dislikeCount}}</span> 
+            <a href="#" class="btn btn-default btn-xs pull-right" role="button">Git
+              <i class="glyphicon glyphicon-edit"></i>
+            </a>
+            </div>
+            <hr>
+          <!-- </div> -->
+        </div><!-- center user posts-->
+
+        <!-- current hastags-->
+
+        
+  </div>
+       <div class="col-sm-3 sidenav" *ngIf="!Ifollowed"> 
+           <div class="panel panel-primary" > 
+            <div class="panel-heading"><h4>Önerilen Hesaplar</h4></div>
+            <div class="panel-body"*ngFor="let item of followerUser">
+              <div class="row" *ngIf="!item.IFollowed">
+                 <div class="col-sm-4" > 
+                   <img src="{{item.userFollowers.profileImage}}" alt="" height="70px" width="70px"> 
+                 </div> 
+                 <div class="col-sm-4" style="margin-top: 5%;"> 
+                 <a><p >{{item.userFollowers.name}}</p> </a>  
+                   <p>{{item.userFollowers.username}}</p> 
+                 </div> 
+                 <div class="col-sm-4" style="padding-right: 1%" > 
+                   <i (click)="addFollow(item.userFollowers.id)"  class="fa fa-user-plus fa-2x"></i><p>Takip Et</p> 
+                 </div> 
+              </div>
+            </div>
+          <!-- </div> -->
+        <!-- </div> -->
+
+
+
+      
+
+      </div>
+    </div>
+</div>

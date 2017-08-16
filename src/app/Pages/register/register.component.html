@@ -1,0 +1,35 @@
+
+<div class="row background">
+
+    <div class="container login">
+        
+        <h2>Üye Ol</h2>
+        <form name="form"   novalidate>
+            <div class="form-group">
+                <label for="username">İsim</label>
+                <input style="width: 300px" type="text" class="form-control" name="name" [(ngModel)]="user.name"  required />
+            
+            </div>
+            <div class="form-group">
+                <label for="username">Kullanıcıadı</label>
+                <input style="width: 300px" type="text" class="form-control" name="username"  [(ngModel)]="user.username"   required />
+            
+            </div>
+            <div class="form-group">
+                <label for="username">E-Posta</label>
+                <input style="width: 300px" type="text" class="form-control" name="email"  [(ngModel)]="user.email"  required />
+            
+            </div>
+            <div class="form-group" >
+                <label for="password">Parola</label>
+                <input style="width: 300px"  type="password" class="form-control" name="password"  [(ngModel)]="user.password"   required />
+            
+            </div>
+            <div class="form-group">
+                <button class="btn btn-lg btn-primary" (click)="register()">Onayla</button>
+            </div>
+        </form>
+
+    </div>
+
+</div>

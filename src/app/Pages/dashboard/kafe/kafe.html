@@ -1,0 +1,282 @@
+
+<!-- <div class="flow_container_content">
+    <div class="kafe_flow">
+        <h1>
+            <i></i>
+        </h1>
+
+    </div>
+    <div class="kafe_flow_subscribe">
+        <ul>
+            <li>
+                <p>Gönderi paylaşabilmek için abone olunuz.</p>
+            </li>
+            <li>
+                <input type="submit" value="Abone Ol">
+            </li>
+        </ul>
+    </div>
+    <div class="flow_container_content_validation">  </div>
+    <div class="flow_container_content_post data-total">
+        <div class="flow_container_content_post_content_rt">
+            <div class="flow_container_content_post_post" *ngFor="let item of kafes">
+                <div class="flow_container_content_post_pp">
+                    <a href="">
+                        <img src="" alt="">
+                    </a>
+                </div>
+                <div class="flow_container_content_post_content">
+                    <div class="flow_container_content_post_content_top">
+                        <div class="flow_container_content_post_content_top_left">
+                        <ul>
+                            <li>asdasd</li>
+                            <li>
+                               {{item.kafeId}}
+                            </li>
+                            <li class="Rozet"> {{kafes.kafeId}}</li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <i></i>
+                                <a href="">{{item.kafeDesc.name}}</a>
+                            </li>
+                        </ul>
+                        </div>
+                        <div class="flow_container_content_post_content_top_left_m" ></div>
+                        <div class="flow_container_content_post_content_top_right"></div>
+                    </div>
+                    <div class="flow_container_content_post_content_middle">
+
+                    </div>
+                    <div class="flow_container_content_post_content_bottom">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div> -->
+
+<div class="header">
+    <a class="logo"></a>
+    <div class="flow_header_content_right">
+        <ul>
+            <div class="search">
+            <ul style="list-style-type: none">
+                <li>
+                <input class="search_text_showcase" type="text" placeholder="Ara">
+                <input class="search_button_showcase" type="submit" value="">
+                </li>
+            </ul>
+            </div>
+            <li class="flow_header_content_right_pp"><a href="" title="profilim"><div class="default-profile"></div></a></li>
+            <li class="notification_li"><a href="" title="Bildirimler"><div class=""></div></a></li>
+            <li class="messages_li"><a href="" title="Mesajlar"><div></div></a></li>
+            <li class="flow_header_content_right_logout"><a href="" ><div class="ic-settings"></div></a></li>
+        </ul>
+    </div>
+  <div class="girisyap">
+    <ul style="list-style-type: none">
+      <li>
+        <a routerLink="/login">Giris Yap</a>
+        <i style="vertical-align: sub" class="fa fa-sign-in fa-2x" aria-hidden="true"></i>
+      </li>
+    </ul>
+
+  </div>
+    </div>
+
+
+
+
+
+
+<div class="flow_container_body">
+    <div class="flow_container">
+        <div class="flow_container_left">
+                <div class="flow_container_left_p">
+                    <div class="flow_container_left_profile">
+                        <div class="flow_container_left_profile_pp">
+                            <a href="">
+                                <img src="{{user.backgroundImage}}" alt="">
+                            </a>
+                        </div>
+                        <div class="flow_container_left_profile_content">
+                            <ul>
+                                <li><a href=""><h4>{{user.name}}</h4></a></li>
+                                <li><p>@{{user.username}}</p></li>
+                            </ul>
+                            <ul>
+                                <li><a href="">Gönderi <br><p>{{user.postCount}}</p></a></li>
+                                <li><a href="">Takip Edilen <br><p >{{user.followedByUser}}</p></a></li>
+                                <li><a href="">Takipçi <br><p>{{user.followingOfUser}}</p></a></li>                              
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flow_container_left_k">
+                    <div class="flow_container_left_kafe">
+                        <h3>Kafeler</h3>
+                        <ul *ngFor="let item of kafes">                           
+                            <li><a routerLink="" (click)="getKafeById(item.KafeDesc.id)"><div class="{{item.KafeDesc.name}}"></div>{{item.KafeDesc.name}}</a></li>
+                        </ul>
+                    </div>
+                </div>
+        </div>
+
+        
+        
+        <div class="flow_container_content">
+            <div class="flow_container_content_poster" *ngIf="id ==0">
+                <ul style="width: 100%">
+                    <li class="flow_container_content_poster_left">
+                        <a href=""><img src="" alt=""></a>
+                    </li>
+                    <li class="flow_container_content_poster_right">
+                        <form  action="https://www.finkafe.com/flow/post" accept-charset="UTF-8" enctype="multipart/form-data" onsubmit="myFunction(0)"><input name="_token" type="hidden" value="tZlR9LGewjGeVERdpYSdltijaCyVbwVcKnQCHyWW">
+
+        <textarea placeholder="Yeni ne var?" onchange="toggle_function(0)" maxlength="280" counter="0" class="poster PostEditor PosterEditor_0" data-id="0" id="postArea_0" name="post" cols="50" rows="10" len="0" stage="" style="display: none;"></textarea><div class="emoji-wysiwyg-editor ui-autocomplete-input"  contenteditable="true" did="0" autocomplete="off"></div>
+
+        <input name="post_hidden" type="hidden" value="0">
+		<input name="reply_hidden" type="hidden" value="0">
+        <input name="kafe_hidden" type="hidden" value="0">
+		<input id="post_url_summary_0" name="post_url_summary" type="hidden" value=" ">
+        <input id="post_url_img_0" name="post_url_img" type="hidden" value=" ">
+        <input id="img_hidden0" name="img_hidden" type="hidden" value="">
+		 <input id="share_hidden" name="share_hidden" type="hidden" value="0"> 
+		<div class="Konumum Konum0">
+
+			<i class="fa fa-map-marker" aria-hidden="true"></i>
+
+			<span></span>
+
+			<input maxlength="32" name="location" type="hidden">
+
+		</div>
+
+        <input type="hidden" name="_token" value="tZlR9LGewjGeVERdpYSdltijaCyVbwVcKnQCHyWW">
+
+        <ul style="display: none" class="PSCL0">
+
+            <li class="flow_container_content_poster_preview">
+
+                <i class="fa fa-spinner fa-pulse fa-3x fa-fw poster_canvas_loading" id="poster_canvas_loading0"></i>
+
+                <img id="canvas0">
+
+            </li>
+
+        </ul>
+
+		<div id="load_img_0" class="flow_container_content_post_load_img" style="background-color:#DDD;vertical-align:bottom;display:none;text-align:center;width=100%;">
+			<img src="https://www.finkafe.com/test/load.gif" height="15px" width="20px" style="margin-top:10px">
+		</div>
+
+        <ul class="flow_container_content_poster_bottom">
+
+            <li class="bottom_1" style="font-size: 14px" title="Görsel Ekleyin">
+
+                <input files="" id="img0" accept="image/gif,image/jpeg,image/jpg,image/png" capture="" class="inputfile poster_file_input" name="img" type="file">
+
+                <label for="img0">
+
+                    <i class="fa fa-camera fa-2x" aria-hidden="true"></i>
+
+                </label>
+
+            </li>
+
+			<li class="bottom_3 poster_location" style="font-size: 17px" data-id="0" title="Konum Ekleyin">
+
+				 <i class="fa fa-map-marker fa-2x" aria-hidden="true"></i>
+
+            </li>
+
+            <li class="bottom_4">
+
+                <input class="btn btn-primary" data-id="img0" style="width:80px;height: 30px"  type="submit" value="Gönder">
+
+            </li>
+
+            <li class="chars bottom_5">
+
+                <p data-max="0">280</p>
+
+            </li>
+
+        </ul>
+
+    </form>
+                    </li>
+                </ul>
+            </div>
+            <div class="flow_container_content_validation">
+
+            </div>
+            <div class="flow_container_content_post data-total">
+                <div class="gonderi_yok">
+
+                </div>
+            </div>
+     
+            
+            <div class="flow_post_end">
+                <div class="logo-icon-renkli"   style="height: 40px;vertical-align: middle;">
+
+                </div>
+                <span>SayfaSonu</span>
+            </div>
+           
+        </div>
+
+     
+     
+        <div class="flow_container_right">
+            <div class="flow_container_right_hashtag">
+                <div class="flow_container_right_hash">
+                    <h3><i></i> Güncel Grup Başlıkları </h3>
+                    <ul *ngFor="let item of hashtags;let i=index">
+                        <li style="padding-top: 15px;" ><a href="">#{{item.hashtag}}</a></li>
+                        <li>{{item.hashtagPostCount}}</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="flow_container_right_f">
+                <div class="flow_container_right_footer">
+                    <div class="flow_container_right_footer_logo">
+                        <a href="">
+                            <div class="logo-renkli">
+
+                            </div>
+                        </a>
+                    </div>
+                    <div class="flow_container_right_footer_content">
+                        <ul>
+                            <!-- <li><a href="">Hakkımızda</a></li>
+                            <li><a href="">Yardım</a></li>
+                            <li><a href="">Koşullar</a></li>
+                            <li><a href="">İletişim</a></li>
+                            <li><a href="">2016</a></li> -->
+                        </ul>
+                        <ul>
+                            <li>
+                                <div class="ios">
+
+                                </div>
+                            </li>
+                            <li>
+                                <div class="android">
+
+                                </div>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

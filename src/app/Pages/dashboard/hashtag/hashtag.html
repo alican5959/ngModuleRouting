@@ -1,0 +1,217 @@
+
+<div class="header">
+    <a routerLink="/mainpage" (click)="goToMainpage()" class="logo"></a>
+    <div class="flow_header_content_right">
+        <ul>
+            <div class="search">
+            <ul style="list-style-type: none">
+                <li>
+                <input class="search_text_showcase" type="text" placeholder="Ara">
+                <input class="search_button_showcase" type="submit" value="">
+                </li>
+            </ul>
+            </div>
+            <li class="flow_header_content_right_pp"><a href="" title="profilim"><div class="default-profile"></div></a></li>
+            <li class="notification_li"><a href="" title="Bildirimler"><div class=""></div></a></li>
+            <li class="messages_li"><a href="" title="Mesajlar"><div></div></a></li>
+            <li class="flow_header_content_right_logout"><a href="" ><div class="ic-settings"></div></a></li>
+        </ul>
+    </div>
+  <div class="girisyap">
+    <ul style="list-style-type: none">
+      <li>
+        <a >Giris Yap</a>
+        <i style="vertical-align: sub" class="fa fa-sign-in fa-2x" aria-hidden="true"></i>
+      </li>
+    </ul>
+
+  </div>
+    </div>
+
+
+
+
+
+
+<div class="flow_container_body">
+    <div class="flow_container">
+        <div class="flow_container_left">
+                <div class="flow_container_left_p">
+                    <div class="flow_container_left_profile">
+                        <div class="flow_container_left_profile_pp">
+                            <a href="">
+                                <img src="{{user.backgroundImage}}" alt="">
+                            </a>
+                        </div>
+                        <div class="flow_container_left_profile_content">
+                            <ul>
+                                <li><a href=""><h4>{{user.name}}</h4></a></li>
+                                <li><p>@{{user.username}}</p></li>
+                            </ul>
+                            <ul>
+                                <li><a href="">Gönderi <br><p>{{user.postCount}}</p></a></li>
+                                <li><a href="">Takip Edilen <br><p >{{user.followedByUser}}</p></a></li>
+                                <li><a href="">Takipçi <br><p>{{user.followingOfUser}}</p></a></li>                              
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flow_container_left_k">
+                    <div class="flow_container_left_kafe">
+                       <h3> <i class="fa fa-th"></i> Kafeler</h3>
+                        <ul *ngFor="let item of kafes">                           
+                            <li><a routerLink=""><div class="{{item.KafeDesc.name}}"></div> {{item.KafeDesc.name}}</a></li>
+                        </ul>
+                    </div>
+                </div>
+        </div>
+
+        
+    
+<div class="flow_container_content">
+    <div class="kafe_flow">
+        <h1>
+            <i></i># {{hashtagName}}
+        </h1>
+        <br>
+        <h2>Grup Başlığı Gönderileri</h2>
+
+    </div>
+    <div class="flow_container_content_validation">  </div>
+    <div class="flow_container_content_post data-total">
+        <div class="flow_container_content_post_content_rt">   </div>
+        <div class="flow_container_content_post_post" *ngFor="let item of postsByHashtag">
+             <div class="flow_container_content_post_pp">
+                    <a href="">
+                         <img src="{{item.user.profileImage}}" alt=""> 
+                    </a>
+                </div>
+                <div class="flow_container_content_post_content">
+                    <div class="flow_container_content_post_content_top">
+                        <div class="flow_container_content_post_content_top_left">
+                        <ul>
+                             <li>{{item.user.name}}</li> 
+                             <li>@{{item.user.username}} </li> 
+                            <li class="Rozet"></li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <i></i>
+                                 <a routerLink="">{{item.kafeDesc.name}}</a> 
+                            </li>
+                        </ul>
+                        </div>
+                        <div class="flow_container_content_post_content_top_left_m" ></div>
+                        <div class="flow_container_content_post_content_top_right">
+                            <div class="flow_container_content_post_content_top_right_top">
+                                <ul>
+                                    <li>
+                                         <p>{{item.createdAt}}</p> 
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flow_container_content_post_content_middle">
+                        <article>
+                            <p [innerHTML]="item.post"></p>
+                            <div>
+                                <a href=""></a>
+                                <a href=""></a>
+                            </div>
+                        </article>
+                        <a class="popup ImagePopupNone" href="">
+                             <img src="{{item.fileEntries.imgFilename}}" alt=""> 
+                        </a>
+                    </div>
+                    <div class="flow_container_content_post_content_bottom">
+                        <div class="flow_container_content_post_content_bottom_left">
+                            <ul>
+                                <li><a href=""><i class="fa fa-pencil"></i>Yanıtla</a></li>
+                                <li><a href=""><i class="fa fa-retweet"></i>Alıntıla</a></li>
+                                <li><a href=""><i class="fa fa fa-heart-o"></i>Beğen<span class="flow_container_content_post_content_bottom_left_like">{{item.likeCount}}</span></a></li>
+                                <li><a href=""><i class="fa fa-heartbeat"></i>Beğenme</a></li>
+                                <li><a href=""><i class="fa fa-external-link"></i>Git</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                     
+                </div>
+                     <!-- <div class="flow_container_content_post_comment" style="background-color: brown;z-index: 1000">
+                <ul style="width: 100%;display: block">
+                    <li class="flow_container_content_poster_left">
+                        <a href="">
+                            <img src="" alt="">
+                        </a>
+                    </li>
+                    <li class="flow_container_content_poster_right"></li>
+
+                </ul>
+
+            </div> -->
+               
+        </div>
+       
+     
+     
+
+    </div>
+</div>
+
+     
+     
+        <div class="flow_container_right">
+            <div class="flow_container_right_hashtag">
+                <div class="flow_container_right_hash">
+                    <h3><i class="fa fa-th"></i> Grup Liderleri </h3>
+                    <ul *ngFor="let item of postsByHashtag">
+                        <li style="padding-top: 15px;"><a  routerLink="">{{item.user.name}}</a>   @{{item.user.username}}</li>
+                        <li >{{item.hashtagPostCount}}</li>
+                        <!-- ngIf="i<11"
+                        let i=index -->
+                    </ul>
+                </div>
+            </div>
+            <div class="flow_container_right_f">
+                <div class="flow_container_right_footer">
+                    <div class="flow_container_right_footer_logo">
+                        <a href="">
+                            <div class="logo-renkli">
+
+                            </div>
+                        </a>
+                    </div>
+                    <div class="flow_container_right_footer_content">
+                        <ul>
+                            <!-- <li><a href="">Hakkımızda</a></li>
+                            <li><a href="">Yardım</a></li>
+                            <li><a href="">Koşullar</a></li>
+                            <li><a href="">İletişim</a></li>
+                            <li><a href="">2016</a></li> -->
+                        </ul>
+                        <ul>
+                            <li>
+                                <div class="ios">
+
+                                </div>
+                            </li>
+                            <li>
+                                <div class="android">
+
+                                </div>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
